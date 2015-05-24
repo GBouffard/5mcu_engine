@@ -14,8 +14,10 @@ describe('Friend', function(){
     expect(friend.incognito).toBe(true);
   });
 
-  xit('authorise 5mcu to check his location if authorised', function(){
-
+  it('authorise 5mcu to check his location if authorised', function(){
+    friend.inMongodb();
+    friend.authorised();
+    expect(friend.authoriseLocation).toBe(true);
   });
 
   xit('does not authorise 5mcu to check his location if not authorised', function(){
