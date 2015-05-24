@@ -1,11 +1,12 @@
 describe('Friend', function(){
   var friend;
   beforeEach(function(){
-    friend = new Friend;
+    friend = new Friend();
   });
 
-  xit('can have the 5mcu app', function(){
-
+  it('can have the 5mcu app', function(){
+    friend.inMongodb();
+    expect(friend.hasTheApp).toBe(true);
   });
 
   xit('can be on incognito mode', function(){
