@@ -1,6 +1,7 @@
 var Friend = function(){
   this.hasTheApp = false;
   this.incognito = false;
+  this.blacklist = [];
 };
 
 Friend.prototype.inMongodb = function() {

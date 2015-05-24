@@ -1,7 +1,7 @@
 describe('Friend', function(){
   var friend;
   beforeEach(function(){
-    friend = new Friend();
+    friend = new Friend;
     // we will assume right away that we have a friend with the app
     friend.inMongodb();
   });
@@ -26,7 +26,7 @@ describe('Friend', function(){
     expect(friend.authoriseLocation).toBe(false);
   });
 
-  xit('has a blacklist of his/her own', function(){
-
+  it('has a blacklist of his/her own', function(){
+    expect(friend.blacklist).toEqual([]);
   });
 });
