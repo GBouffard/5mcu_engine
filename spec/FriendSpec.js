@@ -2,10 +2,11 @@ describe('Friend', function(){
   var friend;
   beforeEach(function(){
     friend = new Friend();
+    // we will assume right away that we have a friend with the app
+    friend.inMongodb();
   });
 
   it('can have the 5mcu app', function(){
-    friend.inMongodb();
     expect(friend.hasTheApp).toBe(true);
   });
 
@@ -15,13 +16,14 @@ describe('Friend', function(){
   });
 
   it('authorise 5mcu to check his location if authorised', function(){
-    friend.inMongodb();
     friend.authorised();
     expect(friend.authoriseLocation).toBe(true);
   });
 
-  xit('does not authorise 5mcu to check his location if not authorised', function(){
-    
+  it('does not authorise 5mcu to check his location if not authorised', function(){
+    friend.switchIncognito();
+    friend.authorised();
+    expect(friend.authoriseLocation).toBe(false);
   });
 
   xit('has a blacklist of his/her own', function(){
