@@ -9,8 +9,9 @@ describe('Friend', function(){
     expect(friend.hasTheApp).toBe(true);
   });
 
-  xit('can be on incognito mode', function(){
-
+  it('can be on incognito mode', function(){
+    friend.switchIncognito();
+    expect(friend.incognito).toBe(true);
   });
 
   xit('authorise 5mcu to check his location if authorised', function(){

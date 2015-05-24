@@ -7,3 +7,7 @@ Friend.prototype.inMongodb = function() {
 // we will need to make that method acts like an if-statement. If in db, then...
   this.hasTheApp = true;
 };
+
+Friend.prototype.switchIncognito = function() {
+  this.incognito = !this.incognito;
+};
